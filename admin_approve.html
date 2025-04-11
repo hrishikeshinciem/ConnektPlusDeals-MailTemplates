@@ -19,74 +19,95 @@
         
         .container {
             max-width: 600px;
-            margin: 30px auto;
+            margin: 40px auto;
             background-color: #ffffff;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 114, 255, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 114, 255, 0.08);
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .container:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 114, 255, 0.1);
+            transform: translateY(-3px);
         }
         
         .header {
-            padding: 30px 0;
-            background: linear-gradient(120deg, #0072FF, #00C6FF);
+            padding: 35px 0;
+            background: linear-gradient(135deg, #0072FF, #00C6FF);
             color: #ffffff;
             text-align: center;
             position: relative;
+            box-shadow: 0 4px 12px rgba(0, 114, 255, 0.15);
         }
         
         .logo {
             height: 60px;
             margin-bottom: 5px;
             display: inline-block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
         }
         
         .content {
-            padding: 40px 30px;
+            padding: 45px 35px;
             text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f9fbff);
         }
         
         .content h3 {
             color: #0072FF;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
         }
         
         .content p {
-            margin: 0 0 16px;
+            margin: 0 0 18px;
             font-size: 16px;
             color: #4a5568;
+            line-height: 1.7;
         }
         
         .button {
             display: inline-block;
-            padding: 14px 30px;
+            padding: 15px 32px;
             background: linear-gradient(to right, #0072FF, #00C6FF);
             color: #ffffff !important;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             font-size: 16px;
-            margin: 25px 0;
-            box-shadow: 0 4px 10px rgba(0, 114, 255, 0.2);
+            margin: 28px 0;
+            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.25);
             transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
         }
         
         .button:hover {
-            box-shadow: 0 6px 15px rgba(0, 114, 255, 0.3);
-            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
+            transform: translateY(-3px);
+        }
+        
+        .button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 114, 255, 0.2);
         }
         
         .divider {
             height: 1px;
-            background-color: #e8eaed;
-            margin: 30px 0;
+            background: linear-gradient(to right, transparent, rgba(0, 114, 255, 0.1), transparent);
+            margin: 35px 0;
         }
         
         .footer {
             background-color: #f8f9fa;
-            padding: 25px;
+            padding: 28px 25px;
             text-align: center;
             color: #6c757d;
             font-size: 14px;
@@ -94,7 +115,7 @@
         }
         
         .social-icons {
-            margin: 15px 0;
+            margin: 18px 0;
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -104,16 +125,17 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
         }
         
         .social-icon:hover {
             transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
         }
         
         .social-icon img {
@@ -122,7 +144,7 @@
         }
         
         .support {
-            margin-top: 15px;
+            margin-top: 18px;
             font-size: 13px;
             color: #6c757d;
         }
@@ -130,16 +152,42 @@
         .support a {
             color: #0072FF;
             text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .support a:hover {
+            color: #005AC2;
+            text-decoration: underline;
+        }
+        
+        .powered-by {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #8a9199;
+        }
+        
+        .powered-by img {
+            height: 18px;
+            margin-left: 6px;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+        
+        .powered-by img:hover {
+            opacity: 1;
         }
         
         @media (max-width: 600px) {
             .container {
-                margin: 10px;
+                margin: 15px;
                 width: auto;
             }
             
             .content {
-                padding: 30px 20px;
+                padding: 35px 25px;
             }
         }
     </style>
@@ -162,10 +210,12 @@
         
         <!-- Footer -->
         <div class="footer">
-            
             <p>© ${new Date().getFullYear()} ConnektPlus Deals. All rights reserved.</p>
             <div class="support">
                 Need Support? Contact us at <a href="mailto:support@connektplus.com">support@connektplus.com</a>
+            </div>
+            <div class="powered-by">
+                Powered by <img src="./Inciem-Brand-Visual-Identity-Logo (1).png" alt="Company Logo">
             </div>
         </div>
     </div>
